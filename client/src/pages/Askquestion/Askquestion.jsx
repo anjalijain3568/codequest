@@ -9,12 +9,12 @@ const Askquestion=()=> {
     const user=useSelector((state)=>state.currentuserreducer);
     const[questiontitle,setquestiontitle]=useState("");
     const[questionbody,setquestionbody]=useState("");
-    const[questiontag,setquestiontags]=useState("")
+    const[questiontags,setquestiontags]=useState("")
 const handlesubmit=(e)=>{
     e.preventDefault();
     if(user){
-        if(questionbody && questiontitle && questiontag){
-            dispatch(askquestion({questiontitle,questionbody,questiontag,userposted:user.result.name},navigate))
+        if(questionbody && questiontitle && questiontags){
+            dispatch(askquestion({questiontitle,questionbody,questiontags,userposted:user.result.name},navigate))
            alert("you have successfully posted a question")
         }else{
             alert("please enter all the fields")
